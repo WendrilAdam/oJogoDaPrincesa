@@ -37,7 +37,7 @@ namespace JogoDaPrincesa
             {
                 Ini:
                 Random rnd = new Random();
-                int verificador = rnd.Next(1, 7);
+                int verificador = rnd.Next(1, 8);
                 if(verificador != candidato.numero)
                 {
                     foreach(var i in candidatos)
@@ -78,7 +78,7 @@ namespace JogoDaPrincesa
             {
             Ini:
                 Random rnd = new Random();
-                int verificador = rnd.Next(1, 7);
+                int verificador = rnd.Next(1, 8);
                 if (verificador != candidatos[escolha - 1].numero)
                 {
                     foreach (var i in candidatos)
@@ -116,7 +116,7 @@ namespace JogoDaPrincesa
             {
             Ini:
                 Random rnd = new Random();
-                int verificador = rnd.Next(1, 7);
+                int verificador = rnd.Next(1, 8);
                 if (verificador != princesa.numero)
                 {
                     foreach (var i in candidatos)
@@ -139,14 +139,14 @@ namespace JogoDaPrincesa
         {
             Random rnd = new Random();
             int sorteado = 0;
-            int[] verificador = new int[6];
-            int[] resultado = new int[6];
+            int[] verificador = new int[7];
+            int[] resultado = new int[7];
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
             inicio:
-                sorteado = rnd.Next(1, 7);
-                for (int j = 0; j < 6; j++)
+                sorteado = rnd.Next(1, 8);
+                for (int j = 0; j < 7; j++)
                 {
                     if (verificador[j] == sorteado)
                     {
@@ -169,9 +169,10 @@ namespace JogoDaPrincesa
             candidato3 = new Candidato() { };
             candidato4 = new Candidato() { };
             candidato5 = new Candidato() { };
-            candidatos = new Candidato[6] {candidato, candidato1, candidato2, candidato3, candidato4, candidato5};
+            candidato6 = new Candidato() { };
+            candidatos = new Candidato[7] {candidato, candidato1, candidato2, candidato3, candidato4, candidato5, candidato6};
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 candidatos[i].numero = i + 1;
                 candidatos[i].nome = "Candidata " + (i + 1);
@@ -182,11 +183,11 @@ namespace JogoDaPrincesa
                 }
                 else if (candidatos[i].tipo == 3 || candidatos[i].tipo == 4)
                 {
-                    candidatos[i].classe = "Vermelho";
+                    candidatos[i].classe = "Azul";
                 }
                 else
                 {
-                    candidatos[i].classe = "Azul";
+                    candidatos[i].classe = "Vermelho";
                 }
 
                 if (candidatos[i].classe == "Verde")
@@ -223,26 +224,25 @@ namespace JogoDaPrincesa
                         break;
 
                     case 3:
-                        candidatos[i].nomeReal = "a Rainha má";
-                        break;
-
-                    case 4:
-                        candidatos[i].nomeReal = "Serjão o Guarda";
-                        break;
-
-                    case 5:
                         candidatos[i].nomeReal = "Julio o Espião";
                         break;
 
-                    default:
+                    case 4:
                         candidatos[i].nomeReal = "a Camponesa";
+                        break;
+
+                    case 5:
+                        candidatos[i].nomeReal = "Raimunda a rainha má";
+                        break;
+                    case 6:
+                        candidatos[i].nomeReal = "Felix o gato";
+                        break;
+                    default:
+                        candidatos[i].nomeReal = "Serjão o guarda";
                         break;
                 }
                 candidatos[i].pergunta1 = false;
                 candidatos[i].pergunta2 = false;
-
-
-
             }
             return candidatos;
         }
@@ -254,6 +254,7 @@ namespace JogoDaPrincesa
         public Candidato candidato3 { get; set; }
         public Candidato candidato4 { get; set; }
         public Candidato candidato5 { get; set; }
+        public Candidato candidato6 { get; set; }
 
     }
     

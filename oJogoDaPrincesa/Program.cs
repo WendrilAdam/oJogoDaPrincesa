@@ -6,7 +6,7 @@ namespace JogoDaPrincesa
     {
         static void Main(string[] args)
         {
-            Candidato[] candidatos = new Candidato[6];
+            Candidato[] candidatos = new Candidato[7];
             bool entrada = true;
             bool perguntas = true;
             int contador = 0;
@@ -24,7 +24,7 @@ namespace JogoDaPrincesa
                 escolher = int.Parse(Console.ReadLine());
                 if (escolher == 1)
                 {  
-                    int[] resultado = new int[6];
+                    int[] resultado = new int[7];
 
                     resultado = funcao.PreencherTipos();
                     candidatos = funcao.PreencherCandidatos(resultado);
@@ -32,7 +32,7 @@ namespace JogoDaPrincesa
                     Console.Clear();
                     while (perguntas)
                     {
-                        if(contador < 6)
+                        if(contador < 7)
                         {
                             Console.Clear();
                             Console.WriteLine("Olá principe, temos aqui 6 candidatas, porém somente uma é a real princesa, para descobrir qual é faça uma pergunta para cada uma e deduza por si mesmo");
